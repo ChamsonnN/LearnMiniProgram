@@ -5,7 +5,28 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        name:'codeRomantic',
+        age:18,
+        students:[
+            {id:111,name:'a',age:18},
+            {id:112,name:'b',age:20},
+            {id:113,name:'c',age:25},
+            {id:114,name:'d',age:38}
+        ],
+        counter:0
+    },
+    add(){
+        // 1.错误做法：界面不会刷新
+        // this.data.counter+=1
+        // console.log(this.data.counter);
+        this.setData({
+            counter:this.data.counter + 1
+        })
+    },
+    decrease(){
+        this.setData({
+            counter:this.data.counter - 1
+        })
     },
 
     /**
